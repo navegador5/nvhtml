@@ -165,7 +165,7 @@ function _html_str_to_tree(html_str,html) {
 
 
 
-export {
+module.exports =  {
     Html
 }
 
