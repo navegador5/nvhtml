@@ -67,6 +67,9 @@ class Html extends Tree {
         let html_str = _creat_html_str(this)
         return(html_str)
     }
+    stringify() {
+        return(_creat_html_str(this))
+    }
 }
 
 
