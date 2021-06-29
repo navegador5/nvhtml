@@ -1,0 +1,405 @@
+{
+    "html": [],
+    "head": [],
+    "title": [],
+    "base": [
+        "href",
+        "target"
+    ],
+    "link": [
+        "href",
+        "crossorigin",
+        "rel",
+        "media",
+        "integrity",
+        "hreflang",
+        "type",
+        "referrerpolicy",
+        "sizes",
+        "rel",
+        "imagesrcset",
+        "rel",
+        "imagesizes",
+        "rel",
+        "as",
+        "rel",
+        "rel",
+        "color",
+        "rel",
+        "disabled",
+        "title",
+        "title"
+    ],
+    "meta": [
+        "name",
+        "http-equiv",
+        "content",
+        "charset"
+    ],
+    "style": [
+        "media",
+        "title",
+        "title"
+    ],
+    "body": [],
+    "article": [],
+    "section": [],
+    "nav": [],
+    "aside": [],
+    "hgroup": [],
+    "header": [],
+    "footer": [],
+    "address": [],
+    "p": [],
+    "hr": [],
+    "pre": [],
+    "blockquote": [
+        "cite"
+    ],
+    "ol": [
+        "reversed",
+        "start",
+        "type"
+    ],
+    "ul": [],
+    "menu": [],
+    "li": [
+        "value"
+    ],
+    "dl": [],
+    "dt": [],
+    "dd": [],
+    "figure": [],
+    "figcaption": [],
+    "main": [],
+    "div": [],
+    "a": [
+        "href",
+        "target",
+        "download",
+        "rel",
+        "hreflang",
+        "type",
+        "referrerpolicy"
+    ],
+    "em": [],
+    "strong": [],
+    "small": [],
+    "s": [],
+    "cite": [],
+    "q": [
+        "cite"
+    ],
+    "dfn": [
+        "title",
+        "title"
+    ],
+    "abbr": [
+        "title",
+        "title"
+    ],
+    "ruby": [],
+    "rt": [],
+    "rp": [],
+    "data": [
+        "value"
+    ],
+    "time": [
+        "datetime"
+    ],
+    "code": [],
+    "var": [],
+    "samp": [],
+    "kbd": [],
+    "i": [],
+    "b": [],
+    "u": [],
+    "mark": [],
+    "bdi": [],
+    "bdo": [],
+    "span": [],
+    "br": [],
+    "wbr": [],
+    "ins": [
+        "cite",
+        "datetime"
+    ],
+    "del": [
+        "cite",
+        "datetime"
+    ],
+    "picture": [],
+    "source": [
+        "type",
+        "src",
+        "srcset",
+        "sizes",
+        "media",
+        "width",
+        "height"
+    ],
+    "img": [
+        "alt",
+        "src",
+        "srcset",
+        "sizes",
+        "crossorigin",
+        "usemap",
+        "ismap",
+        "width",
+        "height",
+        "referrerpolicy",
+        "decoding",
+        "loading"
+    ],
+    "iframe": [
+        "src",
+        "srcdoc",
+        "name",
+        "sandbox",
+        "allow",
+        "allowfullscreen",
+        "width",
+        "height",
+        "referrerpolicy",
+        "loading"
+    ],
+    "embed": [
+        "src",
+        "type",
+        "width",
+        "height"
+    ],
+    "object": [
+        "data",
+        "type",
+        "name",
+        "form",
+        "width",
+        "height"
+    ],
+    "param": [
+        "name",
+        "value"
+    ],
+    "video": [
+        "src",
+        "crossorigin",
+        "poster",
+        "preload",
+        "autoplay",
+        "playsinline",
+        "loop",
+        "muted",
+        "controls",
+        "width",
+        "height"
+    ],
+    "audio": [
+        "src",
+        "crossorigin",
+        "preload",
+        "autoplay",
+        "loop",
+        "muted",
+        "controls"
+    ],
+    "track": [
+        "kind",
+        "src",
+        "srclang",
+        "label",
+        "default"
+    ],
+    "map": [
+        "name",
+        "usemap"
+    ],
+    "area": [
+        "alt",
+        "coords",
+        "shape",
+        "href",
+        "target",
+        "download",
+        "rel",
+        "referrerpolicy"
+    ],
+    "table": [],
+    "caption": [],
+    "colgroup": [
+        "span"
+    ],
+    "col": [
+        "span"
+    ],
+    "tbody": [],
+    "thead": [],
+    "tfoot": [],
+    "tr": [],
+    "td": [
+        "colspan",
+        "rowspan",
+        "headers"
+    ],
+    "th": [
+        "colspan",
+        "rowspan",
+        "headers",
+        "scope",
+        "abbr"
+    ],
+    "form": [
+        "accept-charset",
+        "action",
+        "autocomplete",
+        "enctype",
+        "method",
+        "name",
+        "novalidate",
+        "target",
+        "rel"
+    ],
+    "label": [
+        "for"
+    ],
+    "input": [
+        "accept",
+        "alt",
+        "autocomplete",
+        "checked",
+        "dirname",
+        "disabled",
+        "form",
+        "formaction",
+        "formenctype",
+        "formmethod",
+        "formnovalidate",
+        "formtarget",
+        "height",
+        "list",
+        "max",
+        "maxlength",
+        "min",
+        "minlength",
+        "multiple",
+        "name",
+        "pattern",
+        "placeholder",
+        "readonly",
+        "required",
+        "size",
+        "src",
+        "step",
+        "type",
+        "value",
+        "width",
+        "title",
+        "title",
+        "pattern"
+    ],
+    "button": [
+        "disabled",
+        "form",
+        "formaction",
+        "formenctype",
+        "formmethod",
+        "formnovalidate",
+        "formtarget",
+        "name",
+        "type",
+        "value"
+    ],
+    "select": [
+        "autocomplete",
+        "disabled",
+        "form",
+        "multiple",
+        "name",
+        "required",
+        "size"
+    ],
+    "datalist": [],
+    "optgroup": [
+        "disabled",
+        "label"
+    ],
+    "option": [
+        "disabled",
+        "label",
+        "selected",
+        "value"
+    ],
+    "textarea": [
+        "autocomplete",
+        "cols",
+        "dirname",
+        "disabled",
+        "form",
+        "maxlength",
+        "minlength",
+        "name",
+        "placeholder",
+        "readonly",
+        "required",
+        "rows",
+        "wrap"
+    ],
+    "output": [
+        "for",
+        "form",
+        "name"
+    ],
+    "progress": [
+        "value",
+        "max"
+    ],
+    "meter": [
+        "value",
+        "min",
+        "max",
+        "low",
+        "high",
+        "optimum"
+    ],
+    "fieldset": [
+        "disabled",
+        "form",
+        "name"
+    ],
+    "legend": [],
+    "details": [
+        "open"
+    ],
+    "summary": [],
+    "dialog": [
+        "open"
+    ],
+    "script": [
+        "src",
+        "type",
+        "nomodule",
+        "async",
+        "defer",
+        "crossorigin",
+        "integrity",
+        "referrerpolicy"
+    ],
+    "noscript": [],
+    "template": [],
+    "slot": [
+        "name"
+    ],
+    "canvas": [
+        "width",
+        "height"
+    ],
+    "h1": [],
+    "h2": [],
+    "h3": [],
+    "h4": [],
+    "h5": [],
+    "h6": [],
+    "sub": [],
+    "sup": []
+}

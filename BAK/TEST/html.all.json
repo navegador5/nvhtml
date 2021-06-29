@@ -1,0 +1,2708 @@
+{
+    "html": {
+        "categories": [
+            "None."
+        ],
+        "contexts": [
+            "As document's  document element .",
+            "Wherever a subdocument fragment is allowed in a compound document."
+        ],
+        "content-model": [
+            "A  head  element followed by a  body  element."
+        ],
+        "tag-omission": [
+            "An  html  element's  start tag  can be omitted\n   if the first thing inside the  html  element is not a  comment .",
+            "An  html  element's  end tag  can be omitted if\n   the  html  element is not immediately followed by a  comment ."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "head": {
+        "categories": [
+            "None."
+        ],
+        "contexts": [
+            "As the first element in an  html  element."
+        ],
+        "content-model": [
+            "If the document is  an  iframe   srcdoc  document  or if title information is available from a higher-level protocol: Zero or more elements of  metadata content , of which no more than one is a  title  element and no more than one is a  base  element.",
+            "Otherwise: One or more elements of  metadata content , of which exactly one is a  title  element and no more than one is a  base  element."
+        ],
+        "tag-omission": [
+            "A  head  element's  start tag  can be omitted if\n   the element is empty, or if the first thing inside the  head  element is an\n   element.",
+            "A  head  element's  end tag  can be omitted if\n   the  head  element is not immediately followed by  ASCII whitespace  or a\n    comment ."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "title": {
+        "categories": [
+            "Metadata content ."
+        ],
+        "contexts": [
+            "In a  head  element containing no other  title  elements."
+        ],
+        "content-model": [
+            "Text  that is not  inter-element whitespace ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "base": {
+        "categories": [
+            "Metadata content ."
+        ],
+        "contexts": [
+            "In a  head  element containing no other  base  elements."
+        ],
+        "content-model": [
+            "Nothing ."
+        ],
+        "tag-omission": [
+            "No  end tag ."
+        ],
+        "attributes": [
+            "#global",
+            "href",
+            "target"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "link": {
+        "categories": [
+            "Metadata content .",
+            "If the element is  allowed in the body :  flow content .",
+            "If the element is  allowed in the body :  phrasing content ."
+        ],
+        "contexts": [
+            "Where  metadata content  is expected.",
+            "In a  noscript  element that is a child of a  head  element.",
+            "If the element is  allowed in the body : where  phrasing content  is expected."
+        ],
+        "content-model": [
+            "Nothing ."
+        ],
+        "tag-omission": [
+            "No  end tag ."
+        ],
+        "attributes": [
+            "#global",
+            "href",
+            "crossorigin",
+            "rel",
+            "media",
+            "integrity",
+            "hreflang",
+            "type",
+            "referrerpolicy",
+            "sizes",
+            "rel",
+            "imagesrcset",
+            "rel",
+            "imagesizes",
+            "rel",
+            "as",
+            "rel",
+            "rel",
+            "color",
+            "rel",
+            "disabled",
+            "title",
+            "title"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "meta": {
+        "categories": [
+            "Metadata content .",
+            "If the  itemprop  attribute is present:  flow content .",
+            "If the  itemprop  attribute is present:  phrasing content ."
+        ],
+        "contexts": [
+            "If the  charset  attribute is present, or if the element's  http-equiv  attribute is in the  Encoding declaration state : in a  head  element.",
+            "If the  http-equiv  attribute is present but not in the  Encoding declaration state : in a  head  element.",
+            "If the  http-equiv  attribute is present but not in the  Encoding declaration state : in a  noscript  element that is a child of a  head  element.",
+            "If the  name  attribute is present: where  metadata content  is expected.",
+            "If the  itemprop  attribute is present: where  metadata content  is expected.",
+            "If the  itemprop  attribute is present: where  phrasing content  is expected."
+        ],
+        "content-model": [
+            "Nothing ."
+        ],
+        "tag-omission": [
+            "No  end tag ."
+        ],
+        "attributes": [
+            "#global",
+            "name",
+            "equiv",
+            "content",
+            "charset"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "style": {
+        "categories": [
+            "Metadata content ."
+        ],
+        "contexts": [
+            "Where  metadata content  is expected.",
+            "In a  noscript  element that is a child of a  head  element."
+        ],
+        "content-model": [
+            "Text  that gives a  conformant style sheet ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global",
+            "media",
+            "title",
+            "title"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "body": {
+        "categories": [
+            "Sectioning root ."
+        ],
+        "contexts": [
+            "As the second element in an  html  element."
+        ],
+        "content-model": [
+            "Flow content ."
+        ],
+        "tag-omission": [
+            "A  body  element's  start tag  can be omitted\n   if the element is empty, or if the first thing inside the  body  element is not\n    ASCII whitespace  or a  comment , except if the\n   first thing inside the  body  element is a  meta ,  link ,\n    script ,  style , or  template  element. ",
+            "A  body  element's  end tag  can be omitted if the\n    body  element is not immediately followed by a  comment ."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "article": {
+        "categories": [
+            "Flow content .",
+            "Sectioning content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  sectioning content  is expected."
+        ],
+        "content-model": [
+            "Flow content ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "section": {
+        "categories": [
+            "Flow content .",
+            "Sectioning content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  sectioning content  is expected."
+        ],
+        "content-model": [
+            "Flow content ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "nav": {
+        "categories": [
+            "Flow content .",
+            "Sectioning content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  sectioning content  is expected."
+        ],
+        "content-model": [
+            "Flow content ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "aside": {
+        "categories": [
+            "Flow content .",
+            "Sectioning content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  sectioning content  is expected."
+        ],
+        "content-model": [
+            "Flow content ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "h1,-h2,-h3,-h4,-h5,-and-h6s": {
+        "categories": [
+            "Flow content .",
+            "Heading content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "As a child of an  hgroup  element.",
+            "Where  heading content  is expected."
+        ],
+        "content-model": [
+            "Phrasing content ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "hgroup": {
+        "categories": [
+            "Flow content .",
+            "Heading content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  heading content  is expected."
+        ],
+        "content-model": [
+            "One or more  h1 ,  h2 ,  h3 ,  h4 ,\n    h5 ,  h6  elements, optionally intermixed with  script-supporting\n   elements ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "header": {
+        "categories": [
+            "Flow content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  flow content  is expected."
+        ],
+        "content-model": [
+            "Flow content , but with no  header  or  footer  element\n   descendants."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "If the nearest ancestor  sectioning content  or  sectioning root \n   element is  the body element :  for authors ;  for implementers .",
+            "Otherwise:  for authors ;  for implementers ."
+        ]
+    },
+    "footer": {
+        "categories": [
+            "Flow content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  flow content  is expected."
+        ],
+        "content-model": [
+            "Flow content , but with no  header  or  footer  element\n   descendants."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "If the nearest ancestor  sectioning content  or  sectioning root \n   element is  the body element :  for authors ;  for implementers .",
+            "Otherwise:  for authors ;  for implementers ."
+        ]
+    },
+    "address": {
+        "categories": [
+            "Flow content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  flow content  is expected."
+        ],
+        "content-model": [
+            "Flow content , but with no  heading\n   content  descendants, no  sectioning content \n   descendants, and no  header ,  footer , or\n    address  element descendants."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "p": {
+        "categories": [
+            "Flow content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  flow content  is expected."
+        ],
+        "content-model": [
+            "Phrasing content ."
+        ],
+        "tag-omission": [
+            "A  p  element's  end tag  can be omitted if the\n    p  element is immediately followed by an  address ,  article ,\n    aside ,  blockquote ,  details ,  div ,  dl ,\n    fieldset ,  figcaption ,  figure ,  footer ,  form ,  h1 ,  h2 ,\n    h3 ,  h4 ,  h5 ,  h6 ,  header ,\n    hgroup ,  hr ,  main ,  menu ,  nav ,\n    ol ,  p ,  pre ,  section ,  table , or\n    ul  element, or if there is no more content in the parent element and the parent\n   element is an  HTML element  that is not an  a ,\n    audio ,  del ,  ins ,  map ,  noscript ,\n   or  video  element, or an  autonomous custom element ."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "hr": {
+        "categories": [
+            "Flow content ."
+        ],
+        "contexts": [
+            "Where  flow content  is expected."
+        ],
+        "content-model": [
+            "Nothing ."
+        ],
+        "tag-omission": [
+            "No  end tag ."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "pre": {
+        "categories": [
+            "Flow content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  flow content  is expected."
+        ],
+        "content-model": [
+            "Phrasing content ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "blockquote": {
+        "categories": [
+            "Flow content .",
+            "Sectioning root .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  flow content  is expected."
+        ],
+        "content-model": [
+            "Flow content ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global",
+            "cite"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "ol": {
+        "categories": [
+            "Flow content .",
+            "If the element's children include at least one  li  element:  Palpable content ."
+        ],
+        "contexts": [
+            "Where  flow content  is expected."
+        ],
+        "content-model": [
+            "Zero or more  li  and  script-supporting  elements."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global",
+            "reversed",
+            "start",
+            "type"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "ul": {
+        "categories": [
+            "Flow content .",
+            "If the element's children include at least one  li  element:  Palpable content ."
+        ],
+        "contexts": [
+            "Where  flow content  is expected."
+        ],
+        "content-model": [
+            "Zero or more  li  and  script-supporting  elements."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "menu": {
+        "categories": [
+            "Flow content .",
+            "If the element's children include at least one  li  element:  Palpable content ."
+        ],
+        "contexts": [
+            "Where  flow content  is expected."
+        ],
+        "content-model": [
+            "Zero or more  li  and  script-supporting  elements."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "li": {
+        "categories": [
+            "None."
+        ],
+        "contexts": [
+            "Inside  ol  elements.",
+            "Inside  ul  elements.",
+            "Inside  menu  elements."
+        ],
+        "content-model": [
+            "Flow content ."
+        ],
+        "tag-omission": [
+            "An  li  element's  end tag  can be omitted if the\n    li  element is immediately followed by another  li  element or if there is\n   no more content in the parent element."
+        ],
+        "attributes": [
+            "#global",
+            "value"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "dl": {
+        "categories": [
+            "Flow content .",
+            "If the element's children include at least one name-value group:  Palpable content ."
+        ],
+        "contexts": [
+            "Where  flow content  is expected."
+        ],
+        "content-model": [
+            "Either: Zero or more groups each consisting of one or more  dt  elements followed by one or more  dd  elements, optionally intermixed with  script-supporting elements .",
+            "Or: One or more  div  elements, optionally intermixed with  script-supporting elements ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "dt": {
+        "categories": [
+            "None."
+        ],
+        "contexts": [
+            "Before  dd  or  dt  elements inside  dl  elements.",
+            "Before  dd  or  dt  elements inside  div  elements that are children of a  dl  element."
+        ],
+        "content-model": [
+            "Flow content , but with no  header ,  footer ,  sectioning content , or  heading content  descendants."
+        ],
+        "tag-omission": [
+            "A  dt  element's  end tag  can be omitted if the\n    dt  element is immediately followed by another  dt  element or a\n    dd  element."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "dd": {
+        "categories": [
+            "None."
+        ],
+        "contexts": [
+            "After  dt  or  dd  elements inside  dl  elements.",
+            "After  dt  or  dd  elements inside  div  elements that are children of a  dl  element."
+        ],
+        "content-model": [
+            "Flow content ."
+        ],
+        "tag-omission": [
+            "A  dd  element's  end tag  can be omitted if the\n    dd  element is immediately followed by another  dd  element or a\n    dt  element, or if there is no more content in the parent element."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "figure": {
+        "categories": [
+            "Flow content .",
+            "Sectioning root .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  flow content  is expected."
+        ],
+        "content-model": [
+            "Either: one  figcaption  element followed by  flow content .",
+            "Or:  flow content  followed by one  figcaption  element.",
+            "Or:  flow content ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "figcaption": {
+        "categories": [
+            "None."
+        ],
+        "contexts": [
+            "As the first or last child of a  figure  element."
+        ],
+        "content-model": [
+            "Flow content ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "main": {
+        "categories": [
+            "Flow content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  flow content  is expected, but only if it is a  hierarchically correct\n    main  element ."
+        ],
+        "content-model": [
+            "Flow content ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "div": {
+        "categories": [
+            "Flow content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  flow content  is expected.",
+            "As a child of a  dl  element."
+        ],
+        "content-model": [
+            "If the element is a child of a  dl  element: one or more  dt  elements followed by one or more  dd  elements, optionally intermixed with  script-supporting elements .",
+            "If the element is not a child of a  dl  element:  flow content ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "a": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "If the element has an  href  attribute:  Interactive content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  phrasing content  is expected."
+        ],
+        "content-model": [
+            "Transparent , but there must be no  interactive content  descendant,\n    a  element descendant, or descendant with the  tabindex  attribute specified."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global",
+            "href",
+            "target",
+            "download",
+            "rel",
+            "hreflang",
+            "type",
+            "referrerpolicy"
+        ],
+        "accessibility-considerations": [
+            "If the element has an  href  attribute:  for authors ;  for implementers .",
+            "Otherwise:  for authors ;  for implementers ."
+        ]
+    },
+    "em": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  phrasing content  is expected."
+        ],
+        "content-model": [
+            "Phrasing content ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "strong": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  phrasing content  is expected."
+        ],
+        "content-model": [
+            "Phrasing content ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "small": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  phrasing content  is expected."
+        ],
+        "content-model": [
+            "Phrasing content ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "s": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  phrasing content  is expected."
+        ],
+        "content-model": [
+            "Phrasing content ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "cite": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  phrasing content  is expected."
+        ],
+        "content-model": [
+            "Phrasing content ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "q": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  phrasing content  is expected."
+        ],
+        "content-model": [
+            "Phrasing content ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global",
+            "cite"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "dfn": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  phrasing content  is expected."
+        ],
+        "content-model": [
+            "Phrasing content , but there must be no  dfn  element descendants."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global",
+            "title",
+            "title"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "abbr": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  phrasing content  is expected."
+        ],
+        "content-model": [
+            "Phrasing content ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global",
+            "title",
+            "title"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "ruby": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  phrasing content  is expected."
+        ],
+        "content-model": [
+            "See prose."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "rt": {
+        "categories": [
+            "None."
+        ],
+        "contexts": [
+            "As a child of a  ruby  element."
+        ],
+        "content-model": [
+            "Phrasing content ."
+        ],
+        "tag-omission": [
+            "An  rt  element's  end tag  can be omitted if the\n    rt  element is immediately followed by an  rt  or  rp  element,\n   or if there is no more content in the parent element."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "rp": {
+        "categories": [
+            "None."
+        ],
+        "contexts": [
+            "As a child of a  ruby  element, either immediately before or immediately after an  rt  element."
+        ],
+        "content-model": [
+            "Text ."
+        ],
+        "tag-omission": [
+            "An  rp  element's  end tag  can be omitted if the\n    rp  element is immediately followed by an  rt  or  rp  element,\n   or if there is no more content in the parent element."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "data": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  phrasing content  is expected."
+        ],
+        "content-model": [
+            "Phrasing content ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global",
+            "value"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "time": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  phrasing content  is expected."
+        ],
+        "content-model": [
+            "If the element has a  datetime  attribute:  Phrasing content .",
+            "Otherwise:  Text , but must match requirements described in prose below."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global",
+            "datetime"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "code": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  phrasing content  is expected."
+        ],
+        "content-model": [
+            "Phrasing content ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "var": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  phrasing content  is expected."
+        ],
+        "content-model": [
+            "Phrasing content ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "samp": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  phrasing content  is expected."
+        ],
+        "content-model": [
+            "Phrasing content ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "kbd": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  phrasing content  is expected."
+        ],
+        "content-model": [
+            "Phrasing content ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "sub-and-sups": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  phrasing content  is expected."
+        ],
+        "content-model": [
+            "Phrasing content ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "The  sub  element:  for authors ;  for implementers .",
+            "The  sup  element:  for authors ;  for implementers ."
+        ]
+    },
+    "i": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  phrasing content  is expected."
+        ],
+        "content-model": [
+            "Phrasing content ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "b": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  phrasing content  is expected."
+        ],
+        "content-model": [
+            "Phrasing content ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "u": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  phrasing content  is expected."
+        ],
+        "content-model": [
+            "Phrasing content ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "mark": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  phrasing content  is expected."
+        ],
+        "content-model": [
+            "Phrasing content ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "bdi": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  phrasing content  is expected."
+        ],
+        "content-model": [
+            "Phrasing content ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global",
+            "dir"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "bdo": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  phrasing content  is expected."
+        ],
+        "content-model": [
+            "Phrasing content ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global",
+            "dir"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "span": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  phrasing content  is expected."
+        ],
+        "content-model": [
+            "Phrasing content ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "br": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content ."
+        ],
+        "contexts": [
+            "Where  phrasing content  is expected."
+        ],
+        "content-model": [
+            "Nothing ."
+        ],
+        "tag-omission": [
+            "No  end tag ."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "wbr": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content ."
+        ],
+        "contexts": [
+            "Where  phrasing content  is expected."
+        ],
+        "content-model": [
+            "Nothing ."
+        ],
+        "tag-omission": [
+            "No  end tag ."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "ins": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  phrasing content  is expected."
+        ],
+        "content-model": [
+            "Transparent ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global",
+            "cite",
+            "datetime"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "del": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content ."
+        ],
+        "contexts": [
+            "Where  phrasing content  is expected."
+        ],
+        "content-model": [
+            "Transparent ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global",
+            "cite",
+            "datetime"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "picture": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "Embedded content ."
+        ],
+        "contexts": [
+            "Where  embedded content  is expected."
+        ],
+        "content-model": [
+            "Zero or more  source  elements, followed by one  img  element,\n   optionally intermixed with  script-supporting elements ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "source": {
+        "categories": [
+            "None."
+        ],
+        "contexts": [
+            "As a child of a  picture  element, before the  img  element.",
+            "As a child of a  media element , before any  flow content  or\n    track  elements."
+        ],
+        "content-model": [
+            "Nothing ."
+        ],
+        "tag-omission": [
+            "No  end tag ."
+        ],
+        "attributes": [
+            "#global",
+            "type",
+            "src",
+            "srcset",
+            "sizes",
+            "media",
+            "width",
+            "height"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "img": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "Embedded content .",
+            "Form-associated element .",
+            "If the element has a  usemap  attribute:  Interactive content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  embedded content  is expected."
+        ],
+        "content-model": [
+            "Nothing ."
+        ],
+        "tag-omission": [
+            "No  end tag ."
+        ],
+        "attributes": [
+            "#global",
+            "alt",
+            "src",
+            "srcset",
+            "sizes",
+            "crossorigin",
+            "usemap",
+            "ismap",
+            "width",
+            "height",
+            "referrerpolicy",
+            "decoding",
+            "loading"
+        ],
+        "accessibility-considerations": [
+            "If the element has a non-empty  alt  attribute:  for authors ;  for implementers .",
+            "Otherwise:  for authors ;  for implementers ."
+        ]
+    },
+    "iframe": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "Embedded content .",
+            "Interactive content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  embedded content  is expected."
+        ],
+        "content-model": [
+            "Nothing ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global",
+            "src",
+            "srcdoc",
+            "name",
+            "sandbox",
+            "allow",
+            "allowfullscreen",
+            "width",
+            "height",
+            "referrerpolicy",
+            "loading"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "embed": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "Embedded content .",
+            "Interactive content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  embedded content  is expected."
+        ],
+        "content-model": [
+            "Nothing ."
+        ],
+        "tag-omission": [
+            "No  end tag ."
+        ],
+        "attributes": [
+            "#global",
+            "src",
+            "type",
+            "width",
+            "height"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "object": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "Embedded content .",
+            "Listed   form-associated element .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  embedded content  is expected."
+        ],
+        "content-model": [
+            "Zero or more  param  elements, then,  transparent ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global",
+            "data",
+            "type",
+            "name",
+            "form",
+            "width",
+            "height"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "param": {
+        "categories": [
+            "None."
+        ],
+        "contexts": [
+            "As a child of an  object  element, before any  flow content ."
+        ],
+        "content-model": [
+            "Nothing ."
+        ],
+        "tag-omission": [
+            "No  end tag ."
+        ],
+        "attributes": [
+            "#global",
+            "name",
+            "value"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "video": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "Embedded content .",
+            "If the element has a  controls  attribute:  Interactive content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  embedded content  is expected."
+        ],
+        "content-model": [
+            "If the element has a  src  attribute:\n zero or more  track  elements, then\n  transparent , but with no  media element  descendants.",
+            "If the element does not have a  src  attribute: zero or more  source  elements, then\n zero or more  track  elements, then\n  transparent , but with no  media element  descendants."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global",
+            "src",
+            "crossorigin",
+            "poster",
+            "preload",
+            "autoplay",
+            "playsinline",
+            "loop",
+            "muted",
+            "controls",
+            "width",
+            "height"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "audio": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "Embedded content .",
+            "If the element has a  controls  attribute:  Interactive content .",
+            "If the element has a  controls  attribute:  Palpable content ."
+        ],
+        "contexts": [
+            "Where  embedded content  is expected."
+        ],
+        "content-model": [
+            "If the element has a  src  attribute:\nzero or more  track  elements, then\n transparent , but with no  media element  descendants.",
+            "If the element does not have a  src  attribute: zero or more  source  elements, then\n zero or more  track  elements, then\n  transparent , but with no  media element  descendants."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global",
+            "src",
+            "crossorigin",
+            "preload",
+            "autoplay",
+            "loop",
+            "muted",
+            "controls"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "track": {
+        "categories": [
+            "None."
+        ],
+        "contexts": [
+            "As a child of a  media element , before any  flow content ."
+        ],
+        "content-model": [
+            "Nothing ."
+        ],
+        "tag-omission": [
+            "No  end tag ."
+        ],
+        "attributes": [
+            "#global",
+            "kind",
+            "src",
+            "srclang",
+            "label",
+            "default"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "map": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  phrasing content  is expected."
+        ],
+        "content-model": [
+            "Transparent ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global",
+            "name",
+            "usemap"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "area": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content ."
+        ],
+        "contexts": [
+            "Where  phrasing content  is expected, but only if there is a  map  element ancestor."
+        ],
+        "content-model": [
+            "Nothing ."
+        ],
+        "tag-omission": [
+            "No  end tag ."
+        ],
+        "attributes": [
+            "#global",
+            "alt",
+            "coords",
+            "shape",
+            "href",
+            "target",
+            "download",
+            "rel",
+            "referrerpolicy"
+        ],
+        "accessibility-considerations": [
+            "If the element has an  href  attribute:  for authors ;  for implementers .",
+            "Otherwise:  for authors ;  for implementers ."
+        ]
+    },
+    "table": {
+        "categories": [
+            "Flow content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  flow content  is expected."
+        ],
+        "content-model": [
+            "In this order: optionally a  caption  element, followed by zero or more\n    colgroup  elements, followed optionally by a  thead  element, followed by\n   either zero or more  tbody  elements or one or more  tr  elements, followed\n   optionally by a  tfoot  element, optionally intermixed with one or more\n    script-supporting elements ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "caption": {
+        "categories": [
+            "None."
+        ],
+        "contexts": [
+            "As the first element child of a  table  element."
+        ],
+        "content-model": [
+            "Flow content , but with no descendant  table  elements."
+        ],
+        "tag-omission": [
+            "A  caption  element's  end tag  can be omitted if\n   the  caption  element is not immediately followed by  ASCII whitespace  or a\n    comment ."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "colgroup": {
+        "categories": [
+            "None."
+        ],
+        "contexts": [
+            "As a child of a  table  element, after any\n    caption  elements and before any  thead ,\n    tbody ,  tfoot , and  tr \n   elements."
+        ],
+        "content-model": [
+            "If the  span  attribute is present:  Nothing .",
+            "If the  span  attribute is absent: Zero or more  col  and  template  elements."
+        ],
+        "tag-omission": [
+            "A  colgroup  element's  start tag  can be\n   omitted if the first thing inside the  colgroup  element is a  col  element,\n   and if the element is not immediately preceded by another  colgroup  element whose\n    end tag  has been omitted. (It can't be omitted if the element\n   is empty.)",
+            "A  colgroup  element's  end tag  can be omitted\n   if the  colgroup  element is not immediately followed by  ASCII whitespace \n   or a  comment ."
+        ],
+        "attributes": [
+            "#global",
+            "span"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "col": {
+        "categories": [
+            "None."
+        ],
+        "contexts": [
+            "As a child of a  colgroup  element that doesn't have\n   a  span  attribute."
+        ],
+        "content-model": [
+            "Nothing ."
+        ],
+        "tag-omission": [
+            "No  end tag ."
+        ],
+        "attributes": [
+            "#global",
+            "span"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "tbody": {
+        "categories": [
+            "None."
+        ],
+        "contexts": [
+            "As a child of a  table  element, after any\n    caption ,  colgroup , and\n    thead  elements, but only if there are no\n    tr  elements that are children of the\n    table  element."
+        ],
+        "content-model": [
+            "Zero or more  tr  and  script-supporting  elements."
+        ],
+        "tag-omission": [
+            "A  tbody  element's  start tag  can be omitted\n   if the first thing inside the  tbody  element is a  tr  element, and if the\n   element is not immediately preceded by a  tbody ,  thead , or\n    tfoot  element whose  end tag  has been omitted. (It\n   can't be omitted if the element is empty.)",
+            "A  tbody  element's  end tag  can be omitted if\n   the  tbody  element is immediately followed by a  tbody  or\n    tfoot  element, or if there is no more content in the parent element."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "thead": {
+        "categories": [
+            "None."
+        ],
+        "contexts": [
+            "As a child of a  table  element, after any\n    caption , and  colgroup \n   elements and before any  tbody ,  tfoot , and\n    tr  elements, but only if there are no other\n    thead  elements that are children of the\n    table  element."
+        ],
+        "content-model": [
+            "Zero or more  tr  and  script-supporting  elements."
+        ],
+        "tag-omission": [
+            "A  thead  element's  end tag  can be omitted if\n   the  thead  element is immediately followed by a  tbody  or\n    tfoot  element."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "tfoot": {
+        "categories": [
+            "None."
+        ],
+        "contexts": [
+            "As a child of a  table  element, after any\n    caption ,  colgroup ,  thead ,\n    tbody , and  tr  elements, but only if there\n   are no other  tfoot  elements that are children of the\n    table  element."
+        ],
+        "content-model": [
+            "Zero or more  tr  and  script-supporting  elements."
+        ],
+        "tag-omission": [
+            "A  tfoot  element's  end tag  can be omitted if\n   there is no more content in the parent element."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "tr": {
+        "categories": [
+            "None."
+        ],
+        "contexts": [
+            "As a child of a  thead  element.",
+            "As a child of a  tbody  element.",
+            "As a child of a  tfoot  element.",
+            "As a child of a  table  element, after any\n    caption ,  colgroup , and  thead \n   elements, but only if there are no  tbody  elements that\n   are children of the  table  element."
+        ],
+        "content-model": [
+            "Zero or more  td ,  th , and  script-supporting  elements."
+        ],
+        "tag-omission": [
+            "A  tr  element's  end tag  can be omitted if the\n    tr  element is immediately followed by another  tr  element, or if there is\n   no more content in the parent element."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "td": {
+        "categories": [
+            "Sectioning root ."
+        ],
+        "contexts": [
+            "As a child of a  tr  element."
+        ],
+        "content-model": [
+            "Flow content ."
+        ],
+        "tag-omission": [
+            "A  td  element's  end tag  can be omitted if the\n    td  element is immediately followed by a  td  or  th  element,\n   or if there is no more content in the parent element."
+        ],
+        "attributes": [
+            "#global",
+            "colspan",
+            "rowspan",
+            "headers"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "th": {
+        "categories": [
+            "None."
+        ],
+        "contexts": [
+            "As a child of a  tr  element."
+        ],
+        "content-model": [
+            "Flow content , but with no  header ,  footer ,\n    sectioning content , or  heading content  descendants."
+        ],
+        "tag-omission": [
+            "A  th  element's  end tag  can be omitted if the\n    th  element is immediately followed by a  td  or  th  element,\n   or if there is no more content in the parent element."
+        ],
+        "attributes": [
+            "#global",
+            "colspan",
+            "rowspan",
+            "headers",
+            "scope",
+            "abbr"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "form": {
+        "categories": [
+            "Flow content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  flow content  is expected."
+        ],
+        "content-model": [
+            "Flow content , but with no  form  element descendants."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global",
+            "charset",
+            "action",
+            "autocomplete",
+            "enctype",
+            "method",
+            "name",
+            "novalidate",
+            "target",
+            "rel"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "label": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "Interactive content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  phrasing content  is expected."
+        ],
+        "content-model": [
+            "Phrasing content , but with no descendant  labelable elements  unless it is the element's  labeled control , and no descendant  label  elements."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global",
+            "for"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "input": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "If the  type  attribute is  not  in the  Hidden  state:  Interactive content .",
+            "If the  type  attribute is  not  in the  Hidden  state:  Listed ,  labelable ,  submittable ,  resettable , and  autocapitalize-inheriting   form-associated element .",
+            "If the  type  attribute is in the  Hidden  state:  Listed ,  submittable ,  resettable , and  autocapitalize-inheriting   form-associated element .",
+            "If the  type  attribute is  not  in the  Hidden  state:  Palpable content ."
+        ],
+        "contexts": [
+            "Where  phrasing content  is expected."
+        ],
+        "content-model": [
+            "Nothing ."
+        ],
+        "tag-omission": [
+            "No  end tag ."
+        ],
+        "attributes": [
+            "#global",
+            "accept",
+            "alt",
+            "autocomplete",
+            "checked",
+            "dirname",
+            "disabled",
+            "form",
+            "formaction",
+            "formenctype",
+            "formmethod",
+            "formnovalidate",
+            "formtarget",
+            "height",
+            "list",
+            "max",
+            "maxlength",
+            "min",
+            "minlength",
+            "multiple",
+            "name",
+            "pattern",
+            "placeholder",
+            "readonly",
+            "required",
+            "size",
+            "src",
+            "step",
+            "type",
+            "value",
+            "width",
+            "title",
+            "title",
+            "pattern"
+        ],
+        "accessibility-considerations": [
+            "type  attribute in the  Hidden  state:  for authors ;  for implementers .",
+            "type  attribute in the  Text  state:  for authors ;  for implementers .",
+            "type  attribute in the  Search  state:  for authors ;  for implementers .",
+            "type  attribute in the  Telephone  state:  for authors ;  for implementers .",
+            "type  attribute in the  URL  state:  for authors ;  for implementers .",
+            "type  attribute in the  Email  state:  for authors ;  for implementers .",
+            "type  attribute in the  Password  state:  for authors ;  for implementers .",
+            "type  attribute in the  Date  state:  for authors ;  for implementers .",
+            "type  attribute in the  Month  state:  for authors ;  for implementers .",
+            "type  attribute in the  Week  state:  for authors ;  for implementers .",
+            "type  attribute in the  Time  state:  for authors ;  for implementers .",
+            "type  attribute in the  Local Date and Time  state:  for authors ;  for implementers .",
+            "type  attribute in the  Number  state:  for authors ;  for implementers .",
+            "type  attribute in the  Range  state:  for authors ;  for implementers .",
+            "type  attribute in the  Color  state:  for authors ;  for implementers .",
+            "type  attribute in the  Checkbox  state:  for authors ;  for implementers .",
+            "type  attribute in the  Radio Button  state:  for authors ;  for implementers .",
+            "type  attribute in the  File Upload  state:  for authors ;  for implementers .",
+            "type  attribute in the  Submit Button  state:  for authors ;  for implementers .",
+            "type  attribute in the  Image Button  state:  for authors ;  for implementers .",
+            "type  attribute in the  Reset Button  state:  for authors ;  for implementers .",
+            "type  attribute in the  Button  state:  for authors ;  for implementers ."
+        ]
+    },
+    "button": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "Interactive content .",
+            "Listed ,  labelable ,  submittable , and  autocapitalize-inheriting   form-associated element .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  phrasing content  is expected."
+        ],
+        "content-model": [
+            "Phrasing content , but there must be no  interactive content \n   descendant and no descendant with the  tabindex  attribute\n   specified."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global",
+            "disabled",
+            "form",
+            "formaction",
+            "formenctype",
+            "formmethod",
+            "formnovalidate",
+            "formtarget",
+            "name",
+            "type",
+            "value"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "select": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "Interactive content .",
+            "Listed ,  labelable ,  submittable ,  resettable , and  autocapitalize-inheriting   form-associated element .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  phrasing content  is expected."
+        ],
+        "content-model": [
+            "Zero or more  option ,  optgroup , and  script-supporting  elements."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global",
+            "autocomplete",
+            "disabled",
+            "form",
+            "multiple",
+            "name",
+            "required",
+            "size"
+        ],
+        "accessibility-considerations": [
+            "If the element has a  multiple  attribute or a  size  attribute with a value  >  1:  for authors ;  for implementers .",
+            "Otherwise:  for authors ;  for implementers ."
+        ]
+    },
+    "datalist": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content ."
+        ],
+        "contexts": [
+            "Where  phrasing content  is expected."
+        ],
+        "content-model": [
+            "Either:  phrasing content .",
+            "Or: Zero or more  option  and  script-supporting  elements."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "optgroup": {
+        "categories": [
+            "None."
+        ],
+        "contexts": [
+            "As a child of a  select  element."
+        ],
+        "content-model": [
+            "Zero or more  option  and  script-supporting  elements."
+        ],
+        "tag-omission": [
+            "An  optgroup  element's  end tag  can be omitted\n   if the  optgroup  element  is\n   immediately followed by another  optgroup  element, or if  there is no more content in\n   the parent element."
+        ],
+        "attributes": [
+            "#global",
+            "disabled",
+            "label"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "option": {
+        "categories": [
+            "None."
+        ],
+        "contexts": [
+            "As a child of a  select  element.",
+            "As a child of a  datalist  element.",
+            "As a child of an  optgroup  element."
+        ],
+        "content-model": [
+            "If the element has a  label  attribute and a  value  attribute:  Nothing .",
+            "If the element has a  label  attribute but no  value  attribute:  Text .",
+            "If the element has no  label  attribute and is not a\n   child of a  datalist  element:  Text  that is not\n    inter-element whitespace .",
+            "If the element has no  label  attribute and is a child\n   of a  datalist  element:  Text ."
+        ],
+        "tag-omission": [
+            "An  option  element's  end tag  can be omitted if\n   the  option  element is immediately followed by another  option  element, or\n   if it is immediately followed by an  optgroup  element, or if there is no more content\n   in the parent element."
+        ],
+        "attributes": [
+            "#global",
+            "disabled",
+            "label",
+            "selected",
+            "value"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "textarea": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "Interactive content .",
+            "Listed ,  labelable ,  submittable ,  resettable , and  autocapitalize-inheriting   form-associated element .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  phrasing content  is expected."
+        ],
+        "content-model": [
+            "Text ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global",
+            "autocomplete",
+            "cols",
+            "dirname",
+            "disabled",
+            "form",
+            "maxlength",
+            "minlength",
+            "name",
+            "placeholder",
+            "readonly",
+            "required",
+            "rows",
+            "wrap"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "output": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "Listed ,  labelable ,  resettable , and  autocapitalize-inheriting   form-associated element .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  phrasing content  is expected."
+        ],
+        "content-model": [
+            "Phrasing content ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global",
+            "for",
+            "form",
+            "name"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "progress": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "Labelable element .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  phrasing content  is expected."
+        ],
+        "content-model": [
+            "Phrasing content , but there must be no  progress  element descendants."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global",
+            "value",
+            "max"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "meter": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "Labelable element .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  phrasing content  is expected."
+        ],
+        "content-model": [
+            "Phrasing content , but there must be no  meter  element descendants."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global",
+            "value",
+            "min",
+            "max",
+            "low",
+            "high",
+            "optimum"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "fieldset": {
+        "categories": [
+            "Flow content .",
+            "Sectioning root .",
+            "Listed  and  autocapitalize-inheriting   form-associated element .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  flow content  is expected."
+        ],
+        "content-model": [
+            "Optionally a  legend  element, followed by  flow content ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global",
+            "disabled",
+            "form",
+            "name"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "legend": {
+        "categories": [
+            "None."
+        ],
+        "contexts": [
+            "As the  first child  of a  fieldset  element."
+        ],
+        "content-model": [
+            "Phrasing content , optionally intermixed with  heading content ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "details": {
+        "categories": [
+            "Flow content .",
+            "Sectioning root .",
+            "Interactive content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  flow content  is expected."
+        ],
+        "content-model": [
+            "One  summary  element followed by  flow content ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global",
+            "open"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "summary": {
+        "categories": [
+            "None."
+        ],
+        "contexts": [
+            "As the  first child  of a  details  element."
+        ],
+        "content-model": [
+            "Phrasing content , optionally intermixed with  heading content ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "dialog": {
+        "categories": [
+            "Flow content .",
+            "Sectioning root ."
+        ],
+        "contexts": [
+            "Where  flow content  is expected."
+        ],
+        "content-model": [
+            "Flow content ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global",
+            "open"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "script": {
+        "categories": [
+            "Metadata content .",
+            "Flow content .",
+            "Phrasing content .",
+            "Script-supporting element ."
+        ],
+        "contexts": [
+            "Where  metadata content  is expected.",
+            "Where  phrasing content  is expected.",
+            "Where  script-supporting elements  are expected."
+        ],
+        "content-model": [
+            "If there is no  src \n   attribute, depends on the value of the  type  attribute, but must match\n    script content restrictions .",
+            "If there  is  a  src \n   attribute, the element must be either empty or contain only\n    script documentation  that also matches  script\n   content restrictions ."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global",
+            "src",
+            "type",
+            "nomodule",
+            "async",
+            "defer",
+            "crossorigin",
+            "integrity",
+            "referrerpolicy"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "noscript": {
+        "categories": [
+            "Metadata content .",
+            "Flow content .",
+            "Phrasing content ."
+        ],
+        "contexts": [
+            "In a  head  element of an  HTML document , if there are no ancestor  noscript  elements.",
+            "Where  phrasing content  is expected in  HTML documents , if there are no ancestor  noscript  elements."
+        ],
+        "content-model": [
+            "When  scripting is disabled , in a  head  element: in any order, zero or more  link  elements, zero or more  style  elements, and zero or more  meta  elements.",
+            "When  scripting is disabled , not in a  head  element:  transparent , but there must be no  noscript  element descendants.",
+            "Otherwise: text that conforms to the requirements given in the prose."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "template": {
+        "categories": [
+            "Metadata content .",
+            "Flow content .",
+            "Phrasing content .",
+            "Script-supporting element ."
+        ],
+        "contexts": [
+            "Where  metadata content  is expected.",
+            "Where  phrasing content  is expected.",
+            "Where  script-supporting elements  are expected.",
+            "As a child of a  colgroup  element that doesn't have a  span  attribute."
+        ],
+        "content-model": [
+            "Nothing  (for clarification,  see example )."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "slot": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content ."
+        ],
+        "contexts": [
+            "Where  phrasing content  is expected."
+        ],
+        "content-model": [
+            "Transparent"
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global",
+            "name"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    },
+    "canvas": {
+        "categories": [
+            "Flow content .",
+            "Phrasing content .",
+            "Embedded content .",
+            "Palpable content ."
+        ],
+        "contexts": [
+            "Where  embedded content  is expected."
+        ],
+        "content-model": [
+            "Transparent , but with no  interactive content  descendants except\n   for  a  elements,  img  elements with\n    usemap  attributes,  button  elements,\n    input  elements whose  type  attribute are in\n   the  Checkbox  or  Radio Button  states,  input  elements that are\n    buttons , and  select  elements with a  multiple  attribute or a  display size  greater than 1."
+        ],
+        "tag-omission": [
+            "Neither tag is omissible."
+        ],
+        "attributes": [
+            "#global",
+            "width",
+            "height"
+        ],
+        "accessibility-considerations": [
+            "For authors .",
+            "For implementers ."
+        ]
+    }
+}
