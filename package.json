@@ -1,6 +1,6 @@
 {
   "name": "nvhtml",
-  "version": "1.0.4",
+  "version": "1.0.9",
   "description": "",
   "main": "nvhtml.js",
   "scripts": {
@@ -8,14 +8,23 @@
   },
   "author": "https://github.com/navegador5/nvhtml.git",
   "homepage": "https://github.com/navegador5/nvhtml.git",
-  "repository" :{ 
-    "type" : "git",
-    "url" : "https://github.com/navegador5/nvhtml.git"
-  },  
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/navegador5/nvhtml.git"
+  },
   "license": "MIT",
-  "keywords":["html","search"],
+  "keywords": [
+    "html",
+    "query",
+    "search",
+    "filter",
+    "customer-defined-search-function"
+  ],
   "dependencies": {
     "htmlparser2": "^4.1.0",
-    "ndtreejs": "^1.1.5"
+    "nv-array-include": "^1.0.1",
+    "nv-data-tree-csp-forest": "^1.0.18",
+    "nv-data-tree-csp-node": "^1.0.6",
+    "nv-facutil-basic": "^1.0.64"
   }
 }
