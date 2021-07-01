@@ -230,6 +230,37 @@ class Html extends _UiNode {
         sdfs = sdfs.filter(nd=>f(nd));
         return(sdfs)
     }
+    ////
+    ////
+    list_attrs(match_tag) {
+        let sdfs = this.$sdfs_;
+        let nds = sdfs.filter(r=>r.tag===match_tag);
+        let attrs = nds.map(r=>r.attribs);
+        let ks = attrs.map(r=>Object.keys(r));
+        ks = ks.flat();
+        ks = new Set(ks);
+        let vs = attrs.map(r=>Object.values(r));
+        vs = vs.flat();
+        vs = new Set(vs);
+        return({ks,vs})
+    }
+    ////
+    list_chtags(match_tag) {
+        let sdfs = this.$sdfs_;
+        let nds = sdfs.filter(r=>r.tag===match_tag);
+        let chs = nds.map(r=>r.$children_);
+        chs = chs.flat();
+        let st=new Set(chs.map(r=>r.tag))
+        return(st)
+    }
+    ////
+    list_texts(match_tag) {
+        let sdfs = this.$sdfs_;
+        let nds = sdfs.filter(r=>r.tag===match_tag);
+        let texts = nds.map(r=>r.show_text(true));
+        return(new Set(texts))
+    }
+    ////
 }
 
 
