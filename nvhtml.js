@@ -5,6 +5,7 @@ const {_UiNode} = require("nv-data-tree-csp-node");
 const ary_clu = require("nv-array-include");
 const _match = ary_clu._match;
 
+const {po_is_match}=require("nv-array-match");
 
 const {unindent} = require("nv-facutil-basic");
 const _empty_line_regex = /[ \t]+/g;
@@ -103,6 +104,65 @@ function _iter_all(nd) {
     );
     return(lines.flat().join("\n"))
 }
+
+function _rel_tpl(nd,rrt) {
+    let g = nd.$gen_ance();
+    let pl = [nd.tag]
+    for(let nnd of g) {
+        if(nnd!==rrt) {
+            pl.unshift(nnd.tag)
+        } else {
+            break
+        }
+    }
+    return(pl)
+}
+
+
+
+function _get_tpl_set(pls) {
+    let st0 = new Set();
+    let st1 = new Set();
+    for(let pl of pls) {
+        let s = JSON.stringify(pl);
+        if(st0.has(s)) {
+        } else {
+            st0.add(s);
+            st1.add(pl);
+        }
+    }
+    return(st1)
+}
+
+
+function _rel_inclusive_ances(nd,rrt) {
+    let g = nd.$gen_ance();
+    let nds = [nd]
+    for(let nnd of g) {
+        if(nnd!==rrt) {
+            nds.unshift(nnd)
+        } else {
+            break
+        }
+    }
+    return(nds)
+}
+
+
+function _inclusive_ances_match(nd,rrt,...conds) {
+    let lngth = condfs.length;
+    let ances = _rel_inclusive_ances(nd,rrt);
+    for(let i=0;i<ances.length;i++) {
+        if(po_is_match(ances.slice(i),conds)) {
+            return(true)
+        } else {}
+    }
+    return(false)
+}
+
+
+const {table_to_json} = require("./ele/table")
+
 
 class Html extends _UiNode {
     tag=""
@@ -231,6 +291,11 @@ class Html extends _UiNode {
         return(sdfs)
     }
     ////
+    match_filter(...conds) {
+        let sdfs = this.$sdfs_;
+        sdfs = sdfs.filter(nd=>_inclusive_ances_match(nd,this,...conds));
+        return(sdfs)
+    }
     ////
     list_attrs(match_tag) {
         let sdfs = this.$sdfs_;
@@ -254,6 +319,32 @@ class Html extends _UiNode {
         return(st)
     }
     ////
+    list_ptags(match_tag) {
+        let sdfs = this.$sdfs_;
+        let nds = sdfs.filter(r=>r.tag===match_tag);
+        let ps  = nds.map(r=>r.$parent_);
+        let st=new Set(ps.map(r=>r.tag));
+        return(st)
+    }
+    ////
+    list_pls(match_tag,...args) {
+        let sdfs = this.$sdfs_;
+        let nds = sdfs.filter(r=>r.tag===match_tag);
+        let pls = nds.map(nd=>_rel_tpl(nd,this));
+        pls = pls.filter(pl=>ary_clu.loose_include(pl,args))
+        let st = _get_tpl_set(pls);
+        return(st)
+    }
+    ////
+    list_strict_incld_pls(match_tag,...args) {
+        let sdfs = this.$sdfs_;
+        let nds = sdfs.filter(r=>r.tag===match_tag);
+        let pls = nds.map(nd=>_rel_tpl(nd,this));
+        pls = pls.filter(pl=>ary_clu.strict_include(pl,args))
+        let st = _get_tpl_set(pls);
+        return(st)
+    }
+    ////
     list_texts(match_tag) {
         let sdfs = this.$sdfs_;
         let nds = sdfs.filter(r=>r.tag===match_tag);
@@ -261,6 +352,88 @@ class Html extends _UiNode {
         return(new Set(texts))
     }
     ////
+    get forms_()      {return(this.tag_filter("form"))}
+    get form_jsons_() {return(this.forms_.map(r=>form_to_json(r)))}
+    ////
+    get as_()         {return(this.tag_filter("a"))}
+    get ahrefs_()     {return(this.as_.map(r=>r.attribs.href))}
+    ////
+    get scripts_()         {return(this.tag_filter("script"))}
+    get async_scripts_()   {return(this.scripts_.filter(r=>r.attribs.hasOwnProperty("async")))}
+    get defer_scripts_()   {return(this.scripts_.filter(r=>r.attribs.hasOwnProperty("defer")))}
+    get block_scripts_()   {return(this.scripts_.filter(r=>!r.attribs.hasOwnProperty("defer")&&r.attribs.hasOwnProperty("async")))}
+    get script_srcs_()     {return(this.scripts_.map(r=>r.attribs.src).filter(r=>r!==undefined))}
+    get script_texts_()    {return(this.scripts_.map(r=>r.show_text(true).trim()).filter(r=>r!==''))}
+    get script_jsons_()    {
+        let arr = this.scripts_;
+        arr = arr.map(
+            r=> ({
+                _text:r.show_text(true),
+                src:r.attribs.src,
+                defer:r.attribs.defer,
+                async:r.attribs.async,
+                charset:r.attribs.charset,
+                type:r.attribs.type
+            })
+        );
+        return(arr)
+    }
+    ////
+    get links_()            {return(this.tag_filter("link"))}
+    get link_hrefs_()       {return(this.links_.map(r=>r.attribs.href).filter(r=>r!==undefined))}
+    get css_links_()        {return(this.links_.filter(r=>r.attribs.type==='text/css' || r.attribs.rel==='stylesheet'))}
+    get link_jsons_()    {
+        let arr = this.links_;
+        arr = arr.map(
+            r=> ({
+                src:r.attribs.src,
+                href:r.attribs.href,
+                hreflang:r.attribs.hreflang,
+                media:r.attribs.media,
+                rel:r.attribs.rel,
+                sizes:r.attribs.sizes,
+                type:r.attribs.type
+            })
+        );
+        return(arr)
+    }
+    ////
+    get styles_()           {return(this.tag_filter("style"))}
+    get style_texts_()      {return(this.styles_.map(r=>r.show_text(true).trim()))}
+    ////
+    get metas_()             {return(this.tag_filter("meta"))}
+    get http_equivs_()       {
+        let arr = this.metas_;
+        arr = arr.filter(r=>r.attribs.hasOwnProperty("http-equiv"));
+        let d = {}
+        arr.forEach(r=>{d[r.attribs["http-equiv"]]=r.attribs.content});
+        return(d)
+    }
+    ////
+    get selects_()          {return(this.tag_filter("select"))}
+    get slct_jsons_()       {
+        let arr = this.selects_;
+        arr = arr.map(
+            r=> {
+                let d = Object.assign({},r.attribs);
+                let opts = r.$children_.filter(r=>r.tag==='option').map(r=>{
+                    let d = Object.assign({},r.attribs);
+                    d._text = r.show_text(true).trim();
+                    return(d)
+                });
+                d._options = opts;
+                return(d)
+            }
+        );
+        return(arr)
+    }
+    ////
+    get tables_()            {return(this.tag_filter("table"))}
+    get tbl_jsons_()         {
+        let arr = this.tables_;
+        return(arr.map(tbl=>table_to_json(tbl))) 
+    }
+
 }
 
 
@@ -397,12 +570,27 @@ function parse_from_file(fn,forest,max_size=1000000) {
     return(parse_from_str(html_str,forest,max_size))
 }
 
+
+
+
 module.exports = {
+    ////
     _creat_stag,
     _creat_attrib_str,
     _creat_etag,
     parse_from_str,
     parse_from_file,
     Html,
+    ////
+    _get_tpl_set,
+    _rel_tpl,
+    _rel_inclusive_ances,
+    _inclusive_ances_match,
 }
 
+module.exports.text = require("./ele/text");
+module.exports.var  = require("./ele/var");
+module.exports.a    = require("./ele/a");
+module.exports.form = require("./ele/form");
+
+const {form_to_json} = require("./ele/form");

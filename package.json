@@ -1,6 +1,6 @@
 {
   "name": "nvhtml",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "",
   "main": "nvhtml.js",
   "scripts": {
@@ -23,6 +23,7 @@
   "dependencies": {
     "htmlparser2": "^4.1.0",
     "nv-array-include": "^1.0.1",
+    "nv-array-match": "^1.0.0",
     "nv-data-tree-csp-forest": "^1.0.18",
     "nv-data-tree-csp-node": "^1.0.6",
     "nv-facutil-basic": "^1.0.64"
